@@ -4,13 +4,26 @@
     <form>
       <div class="form-group">
         <label for="exampleInputEmail1">Email adresa</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Unesite email">
+        <input 
+          type="email" 
+          v-model="username"
+          class="form-control" 
+          id="exampleInputEmail1" 
+          aria-describedby="emailHelp" 
+          placeholder="Unesite email"
+        >
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Lozinka</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Unesite lozinku">
+        <input 
+          type="password" 
+          v-model="password"
+          class="form-control" 
+          id="exampleInputPassword1" 
+          placeholder="Unesite lozinku"
+        >
       </div>
-      <button type="submit" class="btn btn-primary">Prijava</button>
+      <button type="button" @click="login()" class="btn btn-primary">Prijava</button>
       <router-link to="/" class="btn btn-secondary">Nemaš račun? Registracija</router-link>
     </form>
   </div>
@@ -19,8 +32,19 @@
 
 <script>
 export default {
-  name: 'AboutView',
-}
+  name: 'login',
+  data() {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    login() {
+      console.log('login' + this.username)
+    },
+  },
+};
 </script>
 
 
