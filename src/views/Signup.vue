@@ -22,12 +22,13 @@
             <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Ponovite lozinku">
           </div>
           <button type="submit" class="btn btn-primary">Kreiraj račun</button>
-          <button type="button" class="btn btn-secondary">Imaš račun? Prijava</button>
+          <router-link to="/login" class="btn btn-secondary">Imaš račun? Prijava</router-link>
         </form>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import HelloWorld from '@/components/HelloWorld.vue'

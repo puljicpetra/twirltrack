@@ -11,10 +11,11 @@
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Unesite lozinku">
       </div>
       <button type="submit" class="btn btn-primary">Prijava</button>
-      <button type="button" class="btn btn-secondary">Nemaš račun? Registracija</button>
+      <router-link to="/" class="btn btn-secondary">Nemaš račun? Registracija</router-link>
     </form>
   </div>
 </template>
+
 
 <script>
 export default {
