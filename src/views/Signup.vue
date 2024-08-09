@@ -3,25 +3,43 @@
     <div class="content-wrapper">
       <div class="left-section">
         <img alt="Logo" src="@/assets/logo_savez.jpg" class="logo">
-        <HelloWorld msg="Dobrodošli u TwirlTrack!"/>
       </div>
       <div class="divider"></div>
       <div class="right-section">
         <h1 class="page-title">Registracija</h1> 
         <form>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email adresa</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Unisite email adresu">
+            <label for="emailInput">Email adresa</label>
+            <input 
+              type="email" 
+              v-model="username"
+              class="form-control" 
+              id="emailInput" 
+              aria-describedby="emailHelp" 
+              placeholder="Unesite email adresu"
+            >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Lozinka</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Unesite lozinku">
+            <label for="passwordInput">Lozinka</label>
+            <input 
+              type="password" 
+              v-model="password"
+              class="form-control" 
+              id="passwordInput" 
+              placeholder="Unesite lozinku"
+            >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword2">Ponovite lozinku</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Ponovite lozinku">
+            <label for="passwordRepeatInput">Ponovite lozinku</label>
+            <input 
+              type="password" 
+              v-model="passwordRepeat"
+              class="form-control" 
+              id="passwordRepeatInput" 
+              placeholder="Ponovite lozinku"
+            >
           </div>
-          <button type="submit" class="btn btn-primary">Kreiraj račun</button>
+          <button type="button" @click="signup" class="btn btn-primary">Kreiraj račun</button>
           <router-link to="/login" class="btn btn-secondary">Imaš račun? Prijava</router-link>
         </form>
       </div>
@@ -30,16 +48,43 @@
 </template>
 
 
-<script>
-import HelloWorld from '@/components/HelloWorld.vue'
+<script> 
+import { auth } from "@/firebase";  
+import { createUserWithEmailAndPassword } from "firebase/auth"; 
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+export default { 
+  name: "Signup", 
+  data() { 
+    return { 
+      username: "", 
+      password: "", 
+      passwordRepeat: "", 
+    }; 
+  }, 
+  methods: { 
+    async signup() { 
+      if (this.password !== this.passwordRepeat) { 
+        alert("Lozinke nisu jednake"); 
+        return; 
+      } 
+
+      if (this.password.length < 6) { 
+        alert("Lozinka mora sadržavati minimalno 6 znakova"); 
+        return; 
+      } 
+
+      try { 
+        await createUserWithEmailAndPassword(auth, this.username, this.password); 
+        alert("Korisnik je uspješno registriran"); 
+      } catch (error) { 
+        console.error("Pogreška pri registraciji korisnika:", error); 
+        alert(error.message);  
+      } 
+    }, 
+  } 
+}; 
+</script> 
+
 
 <style scoped>
 .content-wrapper {
@@ -61,8 +106,8 @@ export default {
 }
 
 .logo {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   display: block;
   margin: 0 auto;
 }

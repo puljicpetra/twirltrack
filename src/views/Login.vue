@@ -23,6 +23,7 @@ export default {
 }
 </script>
 
+
 <style scoped>
 .about {
   max-width: 600px;
