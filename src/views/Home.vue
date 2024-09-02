@@ -14,16 +14,18 @@
         </div>
       </div>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
+
+<script>
+export default {
     name: 'Home',
-  }
-  </script>
+}
+</script>
   
-  <style scoped>
-  .home-container {
+
+<style scoped>
+.home-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,54 +38,54 @@
     position: relative;
     background-color: rgba(255, 255, 255, 0.9);
     background-blend-mode: lighten;
-  }
+}
   
-  .content {
+.content {
     color: black;
     z-index: 2;
     text-align: left;
-    margin-left: 10%; /* Adjust this value to bring the text closer to the center */
-  }
+    margin-left: 10%; 
+}
   
-  h1 {
+h1 {
     font-size: 3rem;
     font-weight: bold;
     margin: 0;
-  }
+}
   
-  p {
+p {
     font-size: 1.5rem;
     margin-top: 10px;
-  }
+}
   
-  .image-container {
+.image-container {
     position: relative;
     max-width: 350px;
-    text-align: right; /* Align text to the right */
-    margin-right: 10%; /* Adjust this value to bring the image and text closer to the center */
+    text-align: right; 
+    margin-right: 10%; 
     z-index: 2;
-  }
+}
   
-  .image-container img {
+.image-container img {
     width: 100%;
     border-radius: 15px;
-  }
+}
   
-  .image-text {
+.image-text {
     margin-top: 10px;
-    text-align: right; /* Ensure text is aligned to the right */
-  }
+    text-align: right; 
+}
   
-  .image-text .title {
+.image-text .title {
     font-weight: bold;
     font-size: 1.2rem;
     margin: 0;
-  }
+}
   
-  .image-text .subtitle {
+.image-text .subtitle {
     font-size: 1rem;
     margin: 0;
     color: gray;
-  }
-  </style>
+}
+</style>
   
