@@ -31,6 +31,9 @@
 
 
 <script>
+import { auth } from "@/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth"; 
+
 export default {
   name: 'login',
   data() {
@@ -40,12 +43,20 @@ export default {
     }
   },
   methods: {
-    login() {
-      console.log('login' + this.username)
+    async login() {
+      console.log('login' + this.username);
+
+      try {
+        const result = await signInWithEmailAndPassword(auth, this.username, this.password);
+        console.log("Uspješna prijava.", result);
+      } catch (e) {
+        console.error("Greška", e);
+      }
     },
   },
 };
 </script>
+
 
 
 <style scoped>
