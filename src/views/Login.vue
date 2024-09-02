@@ -49,6 +49,7 @@ export default {
       try {
         const result = await signInWithEmailAndPassword(auth, this.username, this.password);
         console.log("Uspješna prijava.", result);
+        this.$router.replace('/home');
       } catch (e) {
         console.error("Greška", e);
       }
