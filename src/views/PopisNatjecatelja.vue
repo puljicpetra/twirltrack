@@ -10,7 +10,7 @@
             <li class="nav-item">
               <router-link to="/suci" class="nav-link">Suci</router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <router-link to="/popis-natjecatelja" class="nav-link">Popis natjecatelja</router-link>
             </li>
             <li class="nav-item">
@@ -54,6 +54,7 @@
 
   .navbar-nav .nav-item .router-link-active {
     font-weight: bold;
+    color: #ff9999; 
   }
 
   .navbar-nav .btn {

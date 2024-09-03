@@ -55,6 +55,7 @@
 
   .navbar-nav .nav-item .router-link-active {
     font-weight: bold;
+    color: #ff9999; 
   }
 
   .navbar-nav .btn {
