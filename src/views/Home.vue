@@ -7,8 +7,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Suci</a>
+            <li class="nav-item">
+              <router-link to="/suci" class="nav-link">Suci</router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Popis natjecatelja</a>
@@ -32,7 +32,7 @@
           <p>3.–5. svibnja</p>
         </div>
         <div class="image-container">
-          <img src="@/assets/sv_martin.jpg" alt="Toplice Sveti Martin" />
+          <img src="@/assets/sv_martin.jpg" alt="Toplice Sveti Martin" @click="redirectToWebsite" />
           <div class="image-text">
             <p class="title">Toplice Sveti Martin,</p>
             <p class="subtitle">Izvorska 3, 40313 Sveti Martin Na Muri</p>
@@ -45,6 +45,11 @@
   <script>
   export default {
     name: 'Home',
+    methods: {
+      redirectToWebsite() {
+        window.location.href = 'https://www.termesvetimartin.com/hr/';
+      }
+    }
   }
   </script>
   
@@ -110,6 +115,7 @@
   .image-container img {
     width: 100%;
     border-radius: 15px;
+    cursor: pointer; 
   }
   
   .image-text {

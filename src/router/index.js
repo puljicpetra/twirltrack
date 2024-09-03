@@ -23,6 +23,12 @@ const routes = [
     name: 'home',
     component: Home,
     meta: { requiresAuth: true, hideNav: true } 
+  },
+  {
+    path: '/suci',
+    name: 'suci',
+    component: () => import('../views/Suci.vue'), 
+    meta: { requiresAuth: true, hideNav: true }
   }
 ]
 
