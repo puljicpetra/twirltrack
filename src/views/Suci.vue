@@ -58,10 +58,10 @@
             </div>
           </div>
           <div class="card">
-            <img class="card-img-top" :src="require('@/assets/sudacMatejaBaltorinic.jpg')" alt="Card image cap">
+            <img class="card-img-top" :src="require('@/assets/sudacIvanaGarasic.jpg')" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Mateja Baltorinić
-                JASTREBARSKO
+              <p class="card-text">Ivana Garašić
+                SAMOBOR
               </p>
             </div>
           </div>
