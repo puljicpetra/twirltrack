@@ -1,3 +1,4 @@
+<!-- PopisNatjecatelja.vue -->
 <template>
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -14,7 +15,7 @@
               <router-link to="/popis-natjecatelja" class="nav-link">Popis natjecatelja</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Prijava na natjecanje</a>
+              <router-link to="/prijava-na-natjecanje" class="nav-link">Prijava na natjecanje</router-link>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">

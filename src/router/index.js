@@ -4,6 +4,7 @@ import HomeView from '../views/Signup.vue'
 import LoginView from '../views/Login.vue'
 import Home from '../views/Home.vue'
 import PopisNatjecatelja from '../views/PopisNatjecatelja.vue'
+import PrijavaNaNatjecanje from '@/views/PrijavaNaNatjecanje.vue'
 import { auth } from '@/firebase'
 
 Vue.use(VueRouter)
@@ -35,6 +36,12 @@ const routes = [
     path: '/popis-natjecatelja',
     name: 'popis-natjecatelja',
     component: PopisNatjecatelja,
+    meta: { requiresAuth: true, hideNav: true }
+  },
+  {
+    path: '/prijava-na-natjecanje',
+    name: 'prijava-na-natjecanje',
+    component: PrijavaNaNatjecanje,
     meta: { requiresAuth: true, hideNav: true }
   }
 ]
