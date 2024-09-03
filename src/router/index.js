@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/Signup.vue'
 import LoginView from '../views/Login.vue'
 import Home from '../views/Home.vue'
+import { auth } from '@/firebase'
 
 Vue.use(VueRouter)
 
@@ -20,7 +21,8 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Home,
+    meta: { requiresAuth: true, hideNav: true } 
   }
 ]
 
@@ -29,5 +31,16 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const isAuthenticated = auth.currentUser;
+
+  if (requiresAuth && !isAuthenticated) {
+    next('/login');
+  } else {
+    next();
+  }
+});
 
 export default router

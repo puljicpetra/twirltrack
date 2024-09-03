@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <nav>
+    <nav v-if="!hideNav">
       <router-link to="/">Registracija</router-link> |
       <router-link to="/login">Prijava</router-link>
     </nav>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    hideNav() {
+      return this.$route.meta.hideNav;
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

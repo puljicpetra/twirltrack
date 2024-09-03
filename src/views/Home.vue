@@ -1,35 +1,76 @@
 <template>
-    <div class="home-container">
-      <div class="content">
-        <h1>Državno prvenstvo</h1>
-        <h1>mažoretkinja</h1>
-        <h1>2024.</h1>
-        <p>3.–5. svibnja</p>
-      </div>
-      <div class="image-container">
-        <img src="@/assets/sv_martin.jpg" alt="Toplice Sveti Martin" />
-        <div class="image-text">
-          <p class="title">Toplice Sveti Martin,</p>
-          <p class="subtitle">Izvorska 3, 40313 Sveti Martin Na Muri</p>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">twirltrack</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Suci</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Popis natjecatelja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Prijava na natjecanje</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <button class="btn btn-outline-light" type="button">Log out</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="home-container">
+        <div class="content">
+          <h1>Državno prvenstvo</h1>
+          <h1>mažoretkinja</h1>
+          <h1>2024.</h1>
+          <p>3.–5. svibnja</p>
+        </div>
+        <div class="image-container">
+          <img src="@/assets/sv_martin.jpg" alt="Toplice Sveti Martin" />
+          <div class="image-text">
+            <p class="title">Toplice Sveti Martin,</p>
+            <p class="subtitle">Izvorska 3, 40313 Sveti Martin Na Muri</p>
+          </div>
         </div>
       </div>
     </div>
-</template>
+  </template>
   
-
-<script>
-export default {
+  <script>
+  export default {
     name: 'Home',
-}
-</script>
+  }
+  </script>
   
-
-<style scoped>
-.home-container {
+  <style scoped>
+  .navbar {
+    padding: 10px 20px; 
+    background-color: #000;
+  }
+  
+  .navbar-brand {
+    color: #fff; 
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-nav .btn {
+    margin-left: 15px; 
+  }
+  
+  .home-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 56px);
     background-image: url('@/assets/logo_savez.jpg');
     background-size: 50%;
     background-repeat: no-repeat;
@@ -38,54 +79,54 @@ export default {
     position: relative;
     background-color: rgba(255, 255, 255, 0.9);
     background-blend-mode: lighten;
-}
+  }
   
-.content {
+  .content {
     color: black;
     z-index: 2;
     text-align: left;
     margin-left: 10%; 
-}
+  }
   
-h1 {
+  h1 {
     font-size: 3rem;
     font-weight: bold;
     margin: 0;
-}
+  }
   
-p {
+  p {
     font-size: 1.5rem;
     margin-top: 10px;
-}
+  }
   
-.image-container {
+  .image-container {
     position: relative;
     max-width: 350px;
     text-align: right; 
     margin-right: 10%; 
     z-index: 2;
-}
+  }
   
-.image-container img {
+  .image-container img {
     width: 100%;
     border-radius: 15px;
-}
+  }
   
-.image-text {
+  .image-text {
     margin-top: 10px;
     text-align: right; 
-}
+  }
   
-.image-text .title {
+  .image-text .title {
     font-weight: bold;
     font-size: 1.2rem;
     margin: 0;
-}
+  }
   
-.image-text .subtitle {
+  .image-text .subtitle {
     font-size: 1rem;
     margin: 0;
     color: gray;
-}
-</style>
+  }
+  </style>
   
