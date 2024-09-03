@@ -26,60 +26,127 @@
       </nav>
       <div class="suci-container">
         <h1>Suci</h1>
-        <!-- Dodajte sadržaj vezan uz suce ovdje -->
+        <div class="card-row">
+          <!-- Kartica 1 -->
+          <div class="card">
+            <img class="card-img-top" src="https://via.placeholder.com/100x180" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Suci 1: Kratki opis suca i relevantne informacije.</p>
+            </div>
+          </div>
+          <!-- Kartica 2 -->
+          <div class="card">
+            <img class="card-img-top" src="https://via.placeholder.com/100x180" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Suci 2: Kratki opis suca i relevantne informacije.</p>
+            </div>
+          </div>
+          <!-- Kartica 3 (Središnja kartica) -->
+          <div class="card center-card">
+            <img class="card-img-top" src="https://via.placeholder.com/100x180" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Suci 3: Kratki opis suca i relevantne informacije.</p>
+            </div>
+          </div>
+          <!-- Kartica 4 -->
+          <div class="card">
+            <img class="card-img-top" src="https://via.placeholder.com/100x180" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Suci 4: Kratki opis suca i relevantne informacije.</p>
+            </div>
+          </div>
+          <!-- Kartica 5 -->
+          <div class="card">
+            <img class="card-img-top" src="https://via.placeholder.com/100x180" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Suci 5: Kratki opis suca i relevantne informacije.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </template>
-
+  
   <script>
   export default {
     name: 'Suci',
   }
   </script>
-
+  
   <style scoped>
   .navbar {
     padding: 10px 20px;
     background-color: #000;
   }
-
+  
   .navbar-brand {
     color: #fff;
     text-decoration: none;
   }
-
+  
   .navbar-nav .nav-item .nav-link {
     color: #fff;
     font-weight: normal;
   }
-
+  
   .navbar-nav .nav-item .router-link-active {
     font-weight: bold;
     color: #ff9999; 
   }
-
+  
   .navbar-nav .btn {
     margin-left: 15px;
   }
-
+  
   .suci-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 56px);
+    padding: 20px;
     background-image: url('@/assets/logo_savez.jpg');
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 20px;
-    position: relative;
     background-color: rgba(255, 255, 255, 0.9);
     background-blend-mode: lighten;
+    min-height: calc(100vh - 56px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-
+  
   .suci-container h1 {
     font-size: 3rem;
     font-weight: bold;
     color: black;
+    margin-bottom: 2rem; 
+  }
+  
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: center; 
+    padding: 1rem;
+    width: 100%; 
+    max-width: 1200px;
+  }
+  
+  .card {
+    width: 10rem; 
+    flex: 0 0 auto;
+  }
+  
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    background-color: #f8f9fa;
+  }
+  
+  .center-card {
+    order: 0; 
   }
   </style>
+  
