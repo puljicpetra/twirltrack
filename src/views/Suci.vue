@@ -27,39 +27,42 @@
       <div class="suci-container">
         <h1>Suci</h1>
         <div class="card-row">
-          <!-- Kartica 1 -->
           <div class="card">
             <img class="card-img-top" :src="require('@/assets/sudacAlenScuric.jpg')" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Alen Šćuric: Kratki opis suca i relevantne informacije.</p>
+              <p class="card-text">Alen Šćuric 
+                ZAGREB</p>
             </div>
           </div>
-          <!-- Kartica 2 -->
           <div class="card">
             <img class="card-img-top" :src="require('@/assets/sudacAnjaPuhalo.jpg')" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Suci 2: Kratki opis suca i relevantne informacije.</p>
+              <p class="card-text">Anja Puhalo
+                MOSTAR</p>
             </div>
           </div>
-          <!-- Kartica 3 (Središnja kartica) -->
           <div class="card center-card">
             <img class="card-img-top" :src="require('@/assets/sudacIvanaMujkic.jpg')" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Suci 3: Kratki opis suca i relevantne informacije.</p>
+              <p class="card-text">Ivana Mujkić
+                VUKOVAR
+              </p>
             </div>
           </div>
-          <!-- Kartica 4 -->
           <div class="card">
             <img class="card-img-top" :src="require('@/assets/sudacJelenaRaguz.jpg')" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Suci 4: Kratki opis suca i relevantne informacije.</p>
+              <p class="card-text">Jelena Raguž
+                PULA
+              </p>
             </div>
           </div>
-          <!-- Kartica 5 -->
           <div class="card">
             <img class="card-img-top" :src="require('@/assets/sudacMatejaBaltorinic.jpg')" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Suci 5: Kratki opis suca i relevantne informacije.</p>
+              <p class="card-text">Mateja Baltorinić
+                JASTREBARSKO
+              </p>
             </div>
           </div>
         </div>
