@@ -1,8 +1,7 @@
-<!-- PopisNatjecatelja.vue -->
 <template>
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">twirltrack</a>
+        <router-link to="/home" class="navbar-brand">twirltrack</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,31 +29,32 @@
       </div>
     </div>
   </template>
-  
+
   <script>
   export default {
     name: 'PopisNatjecatelja',
   }
   </script>
-  
+
   <style scoped>
   .navbar {
     padding: 10px 20px;
     background-color: #000;
   }
-  
+
   .navbar-brand {
     color: #fff;
+    text-decoration: none;
   }
-  
+
   .navbar-nav .nav-item .nav-link {
     color: #fff;
   }
-  
+
   .navbar-nav .btn {
     margin-left: 15px;
   }
-  
+
   .popis-natjecatelja-container {
     display: flex;
     justify-content: center;
@@ -69,11 +69,10 @@
     background-color: rgba(255, 255, 255, 0.9);
     background-blend-mode: lighten;
   }
-  
+
   .popis-natjecatelja-container h1 {
     font-size: 3rem;
     font-weight: bold;
     color: black;
   }
   </style>
-  
