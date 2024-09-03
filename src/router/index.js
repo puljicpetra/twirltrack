@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/Signup.vue'
 import LoginView from '../views/Login.vue'
 import Home from '../views/Home.vue'
+import PopisNatjecatelja from '../views/PopisNatjecatelja.vue'
 import { auth } from '@/firebase'
 
 Vue.use(VueRouter)
@@ -28,6 +29,12 @@ const routes = [
     path: '/suci',
     name: 'suci',
     component: () => import('../views/Suci.vue'), 
+    meta: { requiresAuth: true, hideNav: true }
+  },
+  {
+    path: '/popis-natjecatelja',
+    name: 'popis-natjecatelja',
+    component: PopisNatjecatelja,
     meta: { requiresAuth: true, hideNav: true }
   }
 ]

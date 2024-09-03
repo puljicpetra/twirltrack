@@ -1,3 +1,4 @@
+<!-- src/views/Suci.vue -->
 <template>
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -11,7 +12,7 @@
               <router-link to="/suci" class="nav-link">Suci</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Popis natjecatelja</a>
+              <router-link to="/popis-natjecatelja" class="nav-link">Popis natjecatelja</router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Prijava na natjecanje</a>
