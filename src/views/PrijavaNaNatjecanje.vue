@@ -13,7 +13,7 @@
             <li class="nav-item">
               <router-link to="/popis-natjecatelja" class="nav-link">Popis natjecatelja</router-link>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <router-link to="/prijava-na-natjecanje" class="nav-link">Prijava na natjecanje</router-link>
             </li>
           </ul>
@@ -50,6 +50,11 @@
 
   .navbar-nav .nav-item .nav-link {
     color: #fff;
+    font-weight: normal;
+  }
+
+  .navbar-nav .nav-item .router-link-active {
+    font-weight: bold;
   }
 
   .navbar-nav .btn {
