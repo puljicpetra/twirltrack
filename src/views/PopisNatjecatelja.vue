@@ -28,94 +28,94 @@
       <h1>Popis natjecatelja</h1>
       <div class="card-row">
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj1.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/1_pula.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 1</span><br>
-              GRAD 1
+              <span class="card-name">Pulske mažoretkinje</span><br>
+              PULA
             </p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj2.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/2_vukovar.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 2</span><br>
-              GRAD 2
+              <span class="card-name">Mažoretkinje Grada Vukovara</span><br>
+              VUKOVAR
             </p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj3.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/3_nedelisce.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 3</span><br>
-              GRAD 3
+              <span class="card-name">Mažoretkinje Nedelišća</span><br>
+              NEDELIŠĆE
             </p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj4.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/4_unitys.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 4</span><br>
-              GRAD 4
+              <span class="card-name">Mažoret klub Unity S</span><br>
+              SAMOBOR
             </p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj5.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/5_vrbovec.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 5</span><br>
-              GRAD 5
+              <span class="card-name">Mažoretkinje Vrbovec</span><br>
+              VRBOVEC
             </p>
           </div>
         </div>
       </div>
       <div class="card-row">
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj6.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/6_ogulin.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 6</span><br>
-              GRAD 6
+              <span class="card-name">Mažoretkinje DND Ogulin</span><br>
+              OGULIN
             </p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj7.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/7_krasic.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 7</span><br>
-              GRAD 7
+              <span class="card-name">Krašićke mažoretkinje</span><br>
+              KRAŠIĆ
             </p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj8.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/8_barban.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 8</span><br>
-              GRAD 8
+              <span class="card-name">Barbanske mažoretkinje</span><br>
+              BARBAN
             </p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj9.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/9_malasubotica.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 9</span><br>
-              GRAD 9
+              <span class="card-name">Mažoretkinje Male Subotice</span><br>
+              MALA SUBOTICA
             </p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" :src="require('@/assets/natjecatelj10.jpg')" alt="Card image cap">
+          <img class="card-img-top" :src="require('@/assets/10_krk.jpg')" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-              <span class="card-name">Natjecatelj 10</span><br>
-              GRAD 10
+              <span class="card-name">Mažoretkinje otoka Krka</span><br>
+              OTOK KRK
             </p>
           </div>
         </div>
@@ -158,7 +158,6 @@ export default {
 .popis-natjecatelja-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: calc(100vh - 56px);
   background-image: url('@/assets/logo_savez.jpg');
@@ -183,33 +182,42 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  align-items: center; 
   padding: 1rem;
-  width: 100%; 
+  width: 100%;
   max-width: 1200px;
 }
 
 .card {
-  width: 12rem; /* Povećanje širine kartice */
-  flex: 0 0 auto;
+  width: calc(20% - 1rem); 
+  height: 250px; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .card-img-top {
-  height: 200px; /* Malo povećana visina slike */
+  height: 150px; 
   object-fit: cover;
+  width: 100%;
 }
 
 .card-body {
   background-color: #f8f9fa;
-  padding: 10px; /* Dodavanje malo više prostora unutar tijela kartice */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-text {
-  margin: 0;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .card-name {
   font-weight: bold;
-  font-size: 1.2rem; /* Malo povećanje veličine fonta za ime mažoretkinje */
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 </style>
