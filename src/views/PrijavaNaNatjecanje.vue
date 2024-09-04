@@ -26,7 +26,14 @@
     </nav>
     <div class="prijava-na-natjecanje-container">
       <h1>Prijava na natjecanje</h1>
-      <!-- Dodajte sadržaj vezan uz prijavu na natjecanje ovdje -->
+      <div class="button-container">
+        <router-link class="button-link" to="/prijava-za-neformaciju">
+          <button class="btn btn-black">Prijava mažoretkinje za neformaciju</button>
+        </router-link>
+        <router-link class="button-link" to="/popis-prijavljenih-neformacija">
+          <button class="btn btn-light btn-text-black">Popis prijavljenih neformacija</button>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +71,7 @@ export default {
 
 .prijava-na-natjecanje-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 56px);
@@ -81,5 +89,42 @@ export default {
   font-size: 3rem;
   font-weight: bold;
   color: black;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px; 
+}
+
+.button-link {
+  text-decoration: none; 
+}
+
+.button-container .btn {
+  width: 250px; 
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0;
+  border: none;
+  color: white;
+  text-align: center;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.btn-black {
+  background-color: #000;
+}
+
+.btn-light {
+  background-color: #ccc; 
+}
+
+.btn-text-black {
+  color: #000 !important; 
 }
 </style>

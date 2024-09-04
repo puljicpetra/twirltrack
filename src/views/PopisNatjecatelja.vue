@@ -126,7 +126,7 @@
 
 <script>
 export default {
-  name: 'PopisNatjecatelja',
+  name: 'PopisNatjecatelja'
 }
 </script>
 
@@ -188,7 +188,7 @@ export default {
 }
 
 .card {
-  width: calc(20% - 1rem); 
+  width: calc(20% - 1rem);
   height: 250px; 
   display: flex;
   flex-direction: column;
