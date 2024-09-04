@@ -1,14 +1,14 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/Signup.vue'
-import LoginView from '../views/Login.vue'
-import Home from '../views/Home.vue'
-import PopisNatjecatelja from '../views/PopisNatjecatelja.vue'
-import PrijavaNaNatjecanje from '@/views/PrijavaNaNatjecanje.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import HomeView from '../views/Signup.vue';
+import LoginView from '../views/Login.vue';
+import Home from '../views/Home.vue';
+import PopisNatjecatelja from '../views/PopisNatjecatelja.vue';
+import PrijavaNaNatjecanje from '@/views/PrijavaNaNatjecanje.vue';
 import PrijavaZaNeformaciju from '@/views/PrijavaZaNeformaciju.vue';
-import { auth } from '@/firebase'
+import { auth } from '@/firebase';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -51,36 +51,27 @@ const routes = [
     component: PrijavaZaNeformaciju,
     meta: { requiresAuth: true, hideNav: true }
   },
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
-
-router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  const isAuthenticated = auth.currentUser;
-
-  if (requiresAuth && !isAuthenticated) {
-    next('/login');
-  } else {
-    next();
-  }
 });
 
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  const isAuthenticated = !!auth.currentUser; 
+  const isAuthenticated = !!auth.currentUser;
+  
+  console.log("Ruta:", to.path);
+  console.log("Zahtijeva autentifikaciju:", requiresAuth);
+  console.log("Korisnik autentificiran:", isAuthenticated);
 
   if (requiresAuth && !isAuthenticated) {
     next('/login'); 
-  } else if (to.path === '/login' && isAuthenticated) {
-    next('/home'); 
   } else {
     next(); 
   }
 });
 
-export default router
+export default router;
