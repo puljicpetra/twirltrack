@@ -5,6 +5,7 @@ import LoginView from '../views/Login.vue'
 import Home from '../views/Home.vue'
 import PopisNatjecatelja from '../views/PopisNatjecatelja.vue'
 import PrijavaNaNatjecanje from '@/views/PrijavaNaNatjecanje.vue'
+import PrijavaZaNeformaciju from '@/views/PrijavaZaNeformaciju.vue';
 import { auth } from '@/firebase'
 
 Vue.use(VueRouter)
@@ -43,7 +44,12 @@ const routes = [
     name: 'prijava-na-natjecanje',
     component: PrijavaNaNatjecanje,
     meta: { requiresAuth: true, hideNav: true }
-  }
+  },
+  {
+    path: '/prijava-za-neformaciju',
+    name: 'prijava-za-neformaciju',
+    component: PrijavaZaNeformaciju 
+  },
 ]
 
 const router = new VueRouter({
@@ -65,16 +71,15 @@ router.beforeEach((to, from, next) => {
 
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  const isAuthenticated = auth.currentUser;
+  const isAuthenticated = !!auth.currentUser; 
 
   if (requiresAuth && !isAuthenticated) {
-    next('/login'); // Ako ruta zahteva autentifikaciju, a korisnik nije prijavljen, preusmeri na login
+    next('/login'); 
   } else if (to.path === '/login' && isAuthenticated) {
-    next('/home'); // Ako je korisnik prijavljen, a pokušava da ide na login, preusmeri na home
+    next('/home'); 
   } else {
-    next(); // U svim drugim slučajevima dozvoli promenu rute
+    next(); 
   }
 });
-
 
 export default router
