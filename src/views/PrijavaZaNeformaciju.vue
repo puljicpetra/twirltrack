@@ -35,8 +35,15 @@
             <label for="prezime">Prezime</label>
             <input type="text" id="prezime" v-model="prezime" class="form-control" required>
           </div>
+          <div class="form-group">
+            <label for="datum">Datum rođenja</label>
+            <input type="date" id="datum" v-model="datum" class="form-control" required>
+          </div>
           <button type="submit" class="btn btn-primary">Pošalji prijavu</button>
         </form>
+        <router-link to="/popis-prijavljenih-neformacija">
+          <button class="btn btn-secondary mt-3">Pogledaj prijavljene mažoretkinje</button>
+        </router-link>
       </div>
     </div>
   </template>
@@ -48,17 +55,27 @@
       return {
         ime: '',
         prezime: '',
-        // Dodajte ostale podatke prema potrebi
+        datum: ''
       };
     },
     methods: {
       submitForm() {
-        // Ovdje dodajte logiku za obradu forme
+        const prijave = JSON.parse(localStorage.getItem('prijave')) || [];
+        prijave.push({
+          ime: this.ime,
+          prezime: this.prezime,
+          datum: this.datum
+        });
+        localStorage.setItem('prijave', JSON.stringify(prijave));
+        this.ime = '';
+        this.prezime = '';
+        this.datum = '';
         alert(`Prijava za ${this.ime} ${this.prezime} poslana!`);
       }
     }
   }
   </script>
+
   
   <style scoped>
   .navbar {
