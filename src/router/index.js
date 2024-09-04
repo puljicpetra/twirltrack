@@ -63,4 +63,18 @@ router.beforeEach((to, from, next) => {
   }
 });
 
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const isAuthenticated = auth.currentUser;
+
+  if (requiresAuth && !isAuthenticated) {
+    next('/login'); // Ako ruta zahteva autentifikaciju, a korisnik nije prijavljen, preusmeri na login
+  } else if (to.path === '/login' && isAuthenticated) {
+    next('/home'); // Ako je korisnik prijavljen, a pokušava da ide na login, preusmeri na home
+  } else {
+    next(); // U svim drugim slučajevima dozvoli promenu rute
+  }
+});
+
+
 export default router
