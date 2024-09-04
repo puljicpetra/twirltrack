@@ -76,6 +76,7 @@ export default {
       try { 
         await createUserWithEmailAndPassword(auth, this.username, this.password); 
         alert("Korisnik je uspješno registriran"); 
+        this.$router.push('/login');
       } catch (error) { 
         console.error("Pogreška pri registraciji korisnika:", error); 
         alert(error.message);  
