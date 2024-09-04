@@ -48,7 +48,8 @@ const routes = [
   {
     path: '/prijava-za-neformaciju',
     name: 'prijava-za-neformaciju',
-    component: PrijavaZaNeformaciju 
+    component: PrijavaZaNeformaciju,
+    meta: { requiresAuth: true, hideNav: true }
   },
 ]
 
