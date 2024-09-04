@@ -47,7 +47,6 @@
   </div>
 </template>
 
-
 <script> 
 import { auth } from "@/firebase";  
 import { createUserWithEmailAndPassword } from "firebase/auth"; 
@@ -85,7 +84,6 @@ export default {
   } 
 }; 
 </script> 
-
 
 <style scoped>
 .content-wrapper {

@@ -29,7 +29,6 @@
   </div>
 </template>
 
-
 <script>
 import { auth } from "@/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth"; 
@@ -57,8 +56,6 @@ export default {
   },
 };
 </script>
-
-
 
 <style scoped>
 .about {
