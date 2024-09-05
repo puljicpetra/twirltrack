@@ -85,8 +85,23 @@ export default {
     };
   },
   methods: {
+    getDobniRazred(godina) {
+      const year = new Date(godina).getFullYear();
+      if (year >= 1999 && year <= 2009) return 'Seniorke';
+      if (year >= 2010 && year <= 2012) return 'Juniorke';
+      if (year >= 2013 && year <= 2016) return 'Kadetkinje';
+      return null;
+    },
     async submitForm() {
       console.log("Submit form called");
+
+      const dobnaGodina = new Date(this.datum).getFullYear();
+      const dobniRazred = this.getDobniRazred(this.datum);
+
+      if (dobniRazred !== this.dobniRazred) {
+        alert("Odabrani dobni razred ne odgovara godini rođenja. Molimo odaberite ispravan dobni razred.");
+        return;
+      }
 
       try {
         await addDoc(collection(db, "prijave"), {
