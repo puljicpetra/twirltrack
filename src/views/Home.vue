@@ -22,7 +22,7 @@
             <span class="nav-link text-light email-link">Korisnik: {{ user.email }}</span>
           </li>
           <li class="nav-item">
-            <button class="btn btn-outline-light" type="button">Log out</button>
+            <button class="btn btn-outline-light" type="button" @click="logout">Odjava</button>
           </li>
         </ul>
       </div>
@@ -32,7 +32,7 @@
         <h1>Državno prvenstvo</h1>
         <h1>mažoretkinja</h1>
         <h1>2024.</h1>
-        <p>3.–5. svibnja</p>
+        <p>3. – 5. svibnja</p>
       </div>
       <div class="image-container">
         <img src="@/assets/sv_martin.jpg" alt="Toplice Sveti Martin" @click="redirectToWebsite" />
@@ -47,6 +47,7 @@
 
 <script>
 import { auth } from "@/firebase";
+import { signOut } from "firebase/auth";
 
 export default {
   name: 'Home',
@@ -65,6 +66,14 @@ export default {
     if (this.unsub) this.unsub();
   },
   methods: {
+    async logout() {
+      try {
+        await signOut(auth);
+        this.$router.replace('/login');
+      } catch (error) {
+        console.error('Greška prilikom odjave:', error);
+      }
+    },
     redirectToWebsite() {
       window.location.href = 'https://www.termesvetimartin.com/hr/';
     }

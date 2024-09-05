@@ -19,7 +19,7 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <button class="btn btn-outline-light" type="button">Log out</button>
+            <button class="btn btn-outline-light" type="button" @click="logout">Odjava</button>
           </li>
         </ul>
       </div>
@@ -71,8 +71,21 @@
 </template>
 
 <script>
+import { auth } from "@/firebase";
+import { signOut } from "firebase/auth";
+
 export default {
   name: 'Suci',
+  methods: {
+    async logout() {
+      try {
+        await signOut(auth);
+        this.$router.replace('/login');
+      } catch (error) {
+        console.error('Greška prilikom odjave:', error);
+      }
+    }
+  }
 }
 </script>
 
