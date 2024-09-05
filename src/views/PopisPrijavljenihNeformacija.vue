@@ -35,6 +35,8 @@
               <th>Ime</th>
               <th>Prezime</th>
               <th>Datum rođenja</th>
+              <th>Dobni razred</th>
+              <th>Kategorija</th>
               <th>Akcija</th>
             </tr>
           </thead>
@@ -43,6 +45,8 @@
               <td>{{ prijava.ime }}</td>
               <td>{{ prijava.prezime }}</td>
               <td>{{ prijava.datum }}</td>
+              <td>{{ prijava.dobniRazred }}</td>
+              <td>{{ prijava.kategorija }}</td>
               <td>
                 <button class="btn btn-danger btn-sm" @click="deletePrijava(prijava.id)">Obriši</button>
               </td>
@@ -54,7 +58,7 @@
         </router-link>
       </div>
     </div>
-  </template>
+  </template>  
   
   <script>
   import { auth } from "@/firebase";
@@ -75,6 +79,29 @@
         try {
           const querySnapshot = await getDocs(collection(db, "prijave"));
           this.prijave = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  
+          const dobniRazrediPrioritet = {
+            'Seniorke': 1,
+            'Juniorke': 2,
+            'Kadetkinje': 3
+          };
+          const kategorijePrioritet = {
+            'solo': 1,
+            'duo': 2
+          };
+  
+          this.prijave.sort((a, b) => {
+            const dobniRazredA = a.dobniRazred;
+            const dobniRazredB = b.dobniRazred;
+            const kategorijaA = a.kategorija;
+            const kategorijaB = b.kategorija;
+  
+            if (dobniRazrediPrioritet[dobniRazredA] !== dobniRazrediPrioritet[dobniRazredB]) {
+              return dobniRazrediPrioritet[dobniRazredA] - dobniRazrediPrioritet[dobniRazredB];
+            }
+  
+            return kategorijePrioritet[kategorijaA] - kategorijePrioritet[kategorijaB];
+          });
         } catch (error) {
           console.error('Greška prilikom učitavanja prijava:', error);
         }
@@ -103,6 +130,7 @@
     }
   }
   </script>
+  
   
   <style scoped>
   .navbar {
