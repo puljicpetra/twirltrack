@@ -49,6 +49,9 @@
             </tr>
           </tbody>
         </table>
+        <router-link to="/prijava-za-neformaciju">
+          <button class="btn btn-secondary mt-3">Povratak na prijavu</button>
+        </router-link>
       </div>
     </div>
   </template>
@@ -165,6 +168,11 @@
   .btn-danger {
     background-color: #dc3545;
     border-color: #dc3545;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
   }
   </style>
   
