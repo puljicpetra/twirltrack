@@ -31,8 +31,12 @@
       <div class="content">
         <h1>Državno prvenstvo</h1>
         <h1>mažoretkinja</h1>
-        <h1>2024.</h1>
+        <h1>2025.</h1>
         <p>3. – 5. svibnja</p>
+        <p>
+          <span class="countdown-label">Vidimo se za:</span>
+          <span class="countdown-text">{{ countdown }}</span>
+        </p> 
       </div>
       <div class="image-container">
         <img src="@/assets/sv_martin.jpg" alt="Toplice Sveti Martin" @click="redirectToWebsite" />
@@ -53,7 +57,8 @@ export default {
   name: 'Home',
   data() {
     return {
-      user: null
+      user: null,
+      countdown: "",
     };
   },
   created() {
@@ -61,9 +66,12 @@ export default {
     this.unsub = auth.onAuthStateChanged(user => {
       this.user = user;
     });
+
+    this.startCountdown();
   },
   beforeDestroy() {
     if (this.unsub) this.unsub();
+    if (this.interval) clearInterval(this.interval);
   },
   methods: {
     async logout() {
@@ -76,6 +84,26 @@ export default {
     },
     redirectToWebsite() {
       window.location.href = 'https://www.termesvetimartin.com/hr/';
+    },
+    startCountdown() {
+      const eventDate = new Date("2025-05-03T00:00:00").getTime();
+      
+      this.interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        if (distance < 0) {
+          clearInterval(this.interval);
+          this.countdown = "Državno prvenstvo je počelo!";
+        } else {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+          this.countdown = `${days} dana, ${hours} sati, ${minutes} minuta, ${seconds} sekundi`;
+        }
+      }, 1000);
     }
   }
 };
@@ -165,5 +193,17 @@ p {
   font-size: 1rem;
   margin: 0;
   color: gray;
+}
+
+.countdown-label {
+  color: black; 
+  font-size: 1.5rem;
+}
+
+.countdown-text {
+  color: #ff6961; 
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-left: 5px;
 }
 </style>
