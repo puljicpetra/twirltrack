@@ -54,6 +54,8 @@
 <script>
 import { auth } from "@/firebase";
 import { signOut } from "firebase/auth";
+import { db } from "@/firebase";
+import { collection, addDoc } from "firebase/firestore"; 
 
 export default {
   name: 'PrijavaZaNeformaciju',
@@ -66,28 +68,38 @@ export default {
     };
   },
   methods: {
-    submitForm() {
-      const prijave = JSON.parse(localStorage.getItem('prijave')) || [];
-      prijave.push({
+  async submitForm() {
+    console.log("Submit form called");
+
+    try {
+      await addDoc(collection(db, "prijave"), {
         ime: this.ime,
         prezime: this.prezime,
-        datum: this.datum
+        datum: this.datum,
+        korisnik: this.user ? this.user.email : 'Anonimno'
       });
-      localStorage.setItem('prijave', JSON.stringify(prijave));
+
+      console.log("Prijava uspješno poslana!");
       this.ime = '';
       this.prezime = '';
       this.datum = '';
-      alert(`Prijava za ${this.ime} ${this.prezime} poslana!`);
-    },
-    async logout() {
-      try {
-        await signOut(auth);
-        this.$router.replace('/login');
-      } catch (error) {
-        console.error('Greška prilikom odjave:', error);
-      }
+
+      alert("Prijava je uspješno poslana!");
+    } catch (error) {
+      console.error("Greška prilikom dodavanja prijave: ", error);
+      alert("Došlo je do greške prilikom slanja prijave.");
+    }
+  },
+  async logout() {
+    try {
+      await signOut(auth);
+      this.$router.replace('/login');
+    } catch (error) {
+      console.error('Greška prilikom odjave:', error);
     }
   }
+}
+
 }
 </script>
 
