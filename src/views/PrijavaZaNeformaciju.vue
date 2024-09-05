@@ -70,7 +70,7 @@
 import { auth } from "@/firebase";
 import { signOut } from "firebase/auth";
 import { db } from "@/firebase";
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore"; 
 
 export default {
   name: 'PrijavaZaNeformaciju',
@@ -92,6 +92,21 @@ export default {
       if (year >= 2013 && year <= 2016) return 'Kadetkinje';
       return null;
     },
+    async checkExistingPrijave() {
+      try {
+        const prijaveQuery = query(
+          collection(db, "prijave"),
+          where("dobniRazred", "==", this.dobniRazred),
+          where("kategorija", "==", this.kategorija)
+        );
+
+        const querySnapshot = await getDocs(prijaveQuery);
+        return !querySnapshot.empty;
+      } catch (error) {
+        console.error("Greška prilikom provjere postojećih prijava: ", error);
+        return false;
+      }
+    },
     async submitForm() {
       console.log("Submit form called");
 
@@ -100,6 +115,11 @@ export default {
 
       if (dobniRazred !== this.dobniRazred) {
         alert("Odabrani dobni razred ne odgovara godini rođenja. Molimo odaberite ispravan dobni razred.");
+        return;
+      }
+
+      if (this.kategorija === 'solo' && await this.checkExistingPrijave()) {
+        alert("Greška prilikom prijave. Za dobni razred " + this.dobniRazred + " i kategoriju Solo već postoji prijavljena mažoretkinja.");
         return;
       }
 
@@ -137,6 +157,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 .navbar {
