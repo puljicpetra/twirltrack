@@ -70,7 +70,7 @@
 import { auth } from "@/firebase";
 import { signOut } from "firebase/auth";
 import { db } from "@/firebase";
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore"; 
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
 export default {
   name: 'PrijavaZaNeformaciju',
@@ -107,6 +107,21 @@ export default {
         return false;
       }
     },
+    async checkDuoLimit() {
+      try {
+        const duoQuery = query(
+          collection(db, "prijave"),
+          where("dobniRazred", "==", this.dobniRazred),
+          where("kategorija", "==", "duo")
+        );
+
+        const querySnapshot = await getDocs(duoQuery);
+        return querySnapshot.size >= 2;
+      } catch (error) {
+        console.error("Greška prilikom provjere limita Duo: ", error);
+        return false;
+      }
+    },
     async submitForm() {
       console.log("Submit form called");
 
@@ -120,6 +135,11 @@ export default {
 
       if (this.kategorija === 'solo' && await this.checkExistingPrijave()) {
         alert("Greška prilikom prijave. Za dobni razred " + this.dobniRazred + " i kategoriju Solo već postoji prijavljena mažoretkinja.");
+        return;
+      }
+
+      if (this.kategorija === 'duo' && await this.checkDuoLimit()) {
+        alert("Greška prilikom prijave. Za dobni razred " + this.dobniRazred + " i kategoriju Duo već postoje 2 prijavljene mažoretkinje.");
         return;
       }
 
@@ -157,7 +177,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 .navbar {
