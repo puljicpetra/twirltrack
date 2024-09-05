@@ -164,7 +164,7 @@ export default {
 }
 
 .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #bf1e2e;
+  border-color: #bf1e2e;
 }
 </style>

@@ -171,8 +171,8 @@
   }
   
   .btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
+    background-color: black;
+    border-color: black;
   }
   </style>
   
