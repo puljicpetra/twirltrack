@@ -29,21 +29,23 @@
       </nav>
       <div class="popis-prijavljenih-neformacija-container">
         <h1>Popis prijavljenih neformacija</h1>
-        <table class="table table-striped">
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>Ime</th>
               <th>Prezime</th>
               <th>Datum rođenja</th>
-              <th>Korisnik</th>
+              <th>Akcija</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="prijava in prijave" :key="prijava.id">
               <td>{{ prijava.ime }}</td>
               <td>{{ prijava.prezime }}</td>
-              <td>{{ formatDate(prijava.datum) }}</td>
-              <td>{{ prijava.korisnik }}</td>
+              <td>{{ prijava.datum }}</td>
+              <td>
+                <button class="btn btn-danger btn-sm" @click="deletePrijava(prijava.id)">Obriši</button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -55,7 +57,7 @@
   import { auth } from "@/firebase";
   import { signOut } from "firebase/auth";
   import { db } from "@/firebase";
-  import { collection, onSnapshot } from "firebase/firestore";
+  import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
   
   export default {
     name: 'PopisPrijavljenihNeformacija',
@@ -65,19 +67,23 @@
         prijave: []
       };
     },
-    created() {
-      this.fetchPrijave();
-    },
     methods: {
       async fetchPrijave() {
         try {
-          const prijaveCollection = collection(db, "prijave");
-          onSnapshot(prijaveCollection, (snapshot) => {
-            this.prijave = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-            console.log("Dohvaćene prijave:", this.prijave);
-          });
+          const querySnapshot = await getDocs(collection(db, "prijave"));
+          this.prijave = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         } catch (error) {
-          console.error('Greška prilikom dohvaćanja prijava:', error);
+          console.error('Greška prilikom učitavanja prijava:', error);
+        }
+      },
+      async deletePrijava(id) {
+        try {
+          await deleteDoc(doc(db, "prijave", id));
+          this.prijave = this.prijave.filter(prijava => prijava.id !== id);
+          alert("Prijava je uspješno obrisana!");
+        } catch (error) {
+          console.error('Greška prilikom brisanja prijave:', error);
+          alert("Došlo je do greške prilikom brisanja prijave.");
         }
       },
       async logout() {
@@ -87,12 +93,10 @@
         } catch (error) {
           console.error('Greška prilikom odjave:', error);
         }
-      },
-      formatDate(dateString) {
-        // Pretpostavljamo da je format datuma "YYYY-MM-DD"
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString(undefined, options);
       }
+    },
+    created() {
+      this.fetchPrijave();
     }
   }
   </script>
@@ -146,6 +150,21 @@
     font-size: 3rem;
     font-weight: bold;
     color: black;
+  }
+  
+  .table {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    text-align: center;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
   }
   </style>
   
