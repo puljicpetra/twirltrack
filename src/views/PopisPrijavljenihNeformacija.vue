@@ -58,21 +58,21 @@
         </router-link>
       </div>
     </div>
-  </template>  
+</template>  
   
-  <script>
-  import { auth } from "@/firebase";
-  import { signOut } from "firebase/auth";
-  import { db } from "@/firebase";
-  import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+<script>
+import { auth } from "@/firebase";
+import { signOut } from "firebase/auth";
+import { db } from "@/firebase";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
   
-  export default {
+export default {
     name: 'PopisPrijavljenihNeformacija',
     data() {
-      return {
-        user: auth.currentUser,
-        prijave: []
-      };
+        return {
+            user: auth.currentUser,
+            prijave: []
+        };
     },
     methods: {
       async fetchPrijave() {
@@ -128,40 +128,39 @@
     created() {
       this.fetchPrijave();
     }
-  }
-  </script>
+}
+</script>
   
-  
-  <style scoped>
-  .navbar {
+<style scoped>
+.navbar {
     padding: 10px 20px;
     background-color: #000;
-  }
+}
   
-  .navbar-brand {
+.navbar-brand {
     color: #fff;
     text-decoration: none;
-  }
+}
   
-  .navbar-nav .nav-item .nav-link {
+.navbar-nav .nav-item .nav-link {
     color: #fff;
     font-weight: normal;
-  }
+}
   
-  .navbar-nav .nav-item .router-link-active {
+.navbar-nav .nav-item .router-link-active {
     font-weight: bold;
     color: #ff9999;
-  }
+}
   
-  .navbar-nav .btn {
+.navbar-nav .btn {
     margin-left: 15px;
-  }
+}
   
-  .email-link {
+.email-link {
     text-decoration: underline;
-  }
+}
   
-  .popis-prijavljenih-neformacija-container {
+.popis-prijavljenih-neformacija-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -175,32 +174,31 @@
     position: relative;
     background-color: rgba(255, 255, 255, 0.9);
     background-blend-mode: lighten;
-  }
+}
   
-  .popis-prijavljenih-neformacija-container h1 {
+.popis-prijavljenih-neformacija-container h1 {
     font-size: 3rem;
     font-weight: bold;
     color: black;
-  }
+}
   
-  .table {
+.table {
     width: 100%;
     max-width: 800px;
     margin-top: 20px;
-  }
+}
   
-  .table th, .table td {
+.table th, .table td {
     text-align: center;
-  }
+}
   
-  .btn-danger {
+.btn-danger {
     background-color: #dc3545;
     border-color: #dc3545;
-  }
+}
   
-  .btn-secondary {
+.btn-secondary {
     background-color: black;
     border-color: black;
-  }
-  </style>
-  
+}
+</style>  
