@@ -13,11 +13,14 @@
           <li class="nav-item">
             <router-link to="/popis-natjecatelja" class="nav-link">Popis natjecatelja</router-link>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <router-link to="/prijava-na-natjecanje" class="nav-link">Prijava na natjecanje</router-link>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item" v-if="user">
+            <span class="nav-link text-light email-link">Korisnik: {{ user.email }}</span>
+          </li>
           <li class="nav-item">
             <button class="btn btn-outline-light" type="button" @click="logout">Odjava</button>
           </li>
@@ -58,7 +61,8 @@ export default {
     return {
       ime: '',
       prezime: '',
-      datum: ''
+      datum: '',
+      user: auth.currentUser
     };
   },
   methods: {
@@ -110,6 +114,10 @@ export default {
 
 .navbar-nav .btn {
   margin-left: 15px;
+}
+
+.email-link {
+  text-decoration: underline;
 }
 
 .prijava-na-natjecanje-container {

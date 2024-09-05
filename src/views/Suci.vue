@@ -18,6 +18,9 @@
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item" v-if="user">
+            <span class="nav-link text-light email-link">Korisnik: {{ user.email }}</span>
+          </li>
           <li class="nav-item">
             <button class="btn btn-outline-light" type="button" @click="logout">Odjava</button>
           </li>
@@ -76,6 +79,20 @@ import { signOut } from "firebase/auth";
 
 export default {
   name: 'Suci',
+  data() {
+    return {
+      user: null
+    };
+  },
+  created() {
+    this.user = auth.currentUser;
+    this.unsub = auth.onAuthStateChanged(user => {
+      this.user = user;
+    });
+  },
+  beforeDestroy() {
+    if (this.unsub) this.unsub();
+  },
   methods: {
     async logout() {
       try {
@@ -112,6 +129,10 @@ export default {
 
 .navbar-nav .btn {
   margin-left: 15px;
+}
+
+.email-link {
+  text-decoration: underline;
 }
 
 .suci-container {
