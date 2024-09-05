@@ -6,6 +6,7 @@ import Home from '../views/Home.vue';
 import PopisNatjecatelja from '../views/PopisNatjecatelja.vue';
 import PrijavaNaNatjecanje from '@/views/PrijavaNaNatjecanje.vue';
 import PrijavaZaNeformaciju from '@/views/PrijavaZaNeformaciju.vue';
+import PopisPrijavljenihNeformacija from '@/views/PopisPrijavljenihNeformacija.vue';
 import { auth } from '@/firebase';
 
 Vue.use(VueRouter);
@@ -49,6 +50,12 @@ const routes = [
     path: '/prijava-za-neformaciju',
     name: 'prijava-za-neformaciju',
     component: PrijavaZaNeformaciju,
+    meta: { requiresAuth: true, hideNav: true }
+  },
+  {
+    path: '/popis-prijavljenih-neformacija',
+    name: 'PopisPrijavljenihNeformacija',
+    component: PopisPrijavljenihNeformacija,
     meta: { requiresAuth: true, hideNav: true }
   },
 ];
