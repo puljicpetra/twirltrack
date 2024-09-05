@@ -42,6 +42,21 @@
           <label for="datum">Datum rođenja</label>
           <input type="date" id="datum" v-model="datum" class="form-control" required>
         </div>
+        <div class="form-group">
+          <label for="dobniRazred">Dobni razred</label>
+          <select id="dobniRazred" v-model="dobniRazred" class="form-control" required>
+            <option value="Seniorke">Seniorke</option>
+            <option value="Juniorke">Juniorke</option>
+            <option value="Kadetkinje">Kadetkinje</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="kategorija">Kategorija</label>
+          <select id="kategorija" v-model="kategorija" class="form-control" required>
+            <option value="solo">Solo</option>
+            <option value="duo">Duo</option>
+          </select>
+        </div>
         <button type="submit" class="btn btn-primary">Pošalji prijavu</button>
       </form>
       <router-link to="/popis-prijavljenih-neformacija">
@@ -64,42 +79,47 @@ export default {
       ime: '',
       prezime: '',
       datum: '',
+      dobniRazred: '',
+      kategorija: '',
       user: auth.currentUser
     };
   },
   methods: {
-  async submitForm() {
-    console.log("Submit form called");
+    async submitForm() {
+      console.log("Submit form called");
 
-    try {
-      await addDoc(collection(db, "prijave"), {
-        ime: this.ime,
-        prezime: this.prezime,
-        datum: this.datum,
-        korisnik: this.user ? this.user.email : 'Anonimno'
-      });
+      try {
+        await addDoc(collection(db, "prijave"), {
+          ime: this.ime,
+          prezime: this.prezime,
+          datum: this.datum,
+          dobniRazred: this.dobniRazred,
+          kategorija: this.kategorija,
+          korisnik: this.user ? this.user.email : 'Anonimno'
+        });
 
-      console.log("Prijava uspješno poslana!");
-      this.ime = '';
-      this.prezime = '';
-      this.datum = '';
+        console.log("Prijava uspješno poslana!");
+        this.ime = '';
+        this.prezime = '';
+        this.datum = '';
+        this.dobniRazred = '';
+        this.kategorija = '';
 
-      alert("Prijava je uspješno poslana!");
-    } catch (error) {
-      console.error("Greška prilikom dodavanja prijave: ", error);
-      alert("Došlo je do greške prilikom slanja prijave.");
-    }
-  },
-  async logout() {
-    try {
-      await signOut(auth);
-      this.$router.replace('/login');
-    } catch (error) {
-      console.error('Greška prilikom odjave:', error);
+        alert("Prijava je uspješno poslana!");
+      } catch (error) {
+        console.error("Greška prilikom dodavanja prijave: ", error);
+        alert("Došlo je do greške prilikom slanja prijave.");
+      }
+    },
+    async logout() {
+      try {
+        await signOut(auth);
+        this.$router.replace('/login');
+      } catch (error) {
+        console.error('Greška prilikom odjave:', error);
+      }
     }
   }
-}
-
 }
 </script>
 
