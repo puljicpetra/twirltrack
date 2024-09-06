@@ -5,7 +5,6 @@
 **Kolegij:** Programsko inženjerstvo  
 **Mentor:** doc. dr. sc. Nikola Tanković
 
----
 
 ## Funkcionalnosti:
 - korisnik kreira račun i prijavljuje se putem email-a i lozinke
@@ -15,12 +14,8 @@
 - odjava mažoretkinje iz baze prijavljenih
 - pregled prijavljenih mažoretkinja
 
----
-
 ## Link aplikacije
 https://twirltrack-a628e.firebaseapp.com/
-
---- 
 
 ### Upute za instalaciju
 ```
