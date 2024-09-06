@@ -14,12 +14,13 @@
 - odjava mažoretkinje iz baze prijavljenih
 - pregled prijavljenih mažoretkinja
 
+
 ## Link aplikacije:
 https://twirltrack-a628e.firebaseapp.com/
 
 
-### Upute za instalaciju:
+## Upute za instalaciju:
 ```
-git clone https://github.com/PetraPulji5/twirltrack.git
+git clone https://github.com/PetraPuljic5/twirltrack.git
 npm run serve
 ```
