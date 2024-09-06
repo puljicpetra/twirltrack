@@ -1,7 +1,7 @@
 # twirltrack
 
 **Tim:** 224/23 - Petra Puljić  
-**Fakultet informatike u Puli**
+**Fakultet informatike u Puli**  
 **Kolegij:** Programsko inženjerstvo  
 **Mentor:** doc. dr. sc. Nikola Tanković
 
