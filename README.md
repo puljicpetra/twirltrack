@@ -15,7 +15,10 @@
 - pregled prijavljenih mažoretkinja
 
 
-## Link aplikacije:
+## Video prezentacija:
+https://youtu.be/FXybIxt0gk4
+
+## Aplikacija:
 https://twirltrack-a628e.firebaseapp.com/
 
 
