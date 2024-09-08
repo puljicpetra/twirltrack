@@ -1,9 +1,9 @@
 # twirltrack
 
 **Tim:** 224/23 - Petra Puljić  
-**Fakultet informatike u Puli**  
-**Kolegij:** Programsko inženjerstvo  
-**Mentor:** doc. dr. sc. Nikola Tanković
+**Fakultet informatike u Puli** (https://fipu.unipu.hr/)
+**Kolegij:** Programsko inženjerstvo (ntankovic.unipu.hr/pi)
+**Mentor:** doc. dr. sc. Nikola Tanković (ntankovic.unipu.hr)
 
 
 ## Funkcionalnosti:
@@ -14,6 +14,12 @@
 - odjava mažoretkinje iz baze prijavljenih
 - pregled prijavljenih mažoretkinja
 
+## Link na javni prototip:
+https://www.figma.com/design/0ExEpyUlnYzHfjImiTCqxe/TwirlTrack---prototip
+
+## Zaduženja po članu tima:
+- 1 član: Petra Puljić
+- izrada i implementacija aplikacije
 
 ## Video prezentacija:
 https://youtu.be/FXybIxt0gk4
