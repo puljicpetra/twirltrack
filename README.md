@@ -1,9 +1,9 @@
 # twirltrack
 
-**Tim:** 224/23 - Petra Puljić  
-**Fakultet informatike u Puli** (https://fipu.unipu.hr/)
-**Kolegij:** Programsko inženjerstvo (ntankovic.unipu.hr/pi)
-**Mentor:** doc. dr. sc. Nikola Tanković (ntankovic.unipu.hr)
+- **Tim:** 224/23 - Petra Puljić  
+- **Fakultet informatike u Puli** (https://fipu.unipu.hr/)
+- **Kolegij:** Programsko inženjerstvo (ntankovic.unipu.hr/pi)
+- **Mentor:** doc. dr. sc. Nikola Tanković (ntankovic.unipu.hr)
 
 
 ## Funkcionalnosti:
