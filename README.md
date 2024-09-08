@@ -14,15 +14,19 @@
 - odjava mažoretkinje iz baze prijavljenih
 - pregled prijavljenih mažoretkinja
 
+
 ## Link na javni prototip:
 https://www.figma.com/design/0ExEpyUlnYzHfjImiTCqxe/TwirlTrack---prototip
+
 
 ## Zaduženja po članu tima:
 - 1 član: Petra Puljić
 - izrada i implementacija aplikacije
 
+
 ## Video prezentacija:
 https://youtu.be/FXybIxt0gk4
+
 
 ## Aplikacija:
 https://twirltrack-a628e.firebaseapp.com/
