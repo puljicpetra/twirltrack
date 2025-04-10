@@ -1,4 +1,4 @@
-# 💃 TwirlTrack
+# 💃 twirltrack
 
 Aplikacija za upravljanje natjecanjima mažoretkinja.
 
@@ -17,8 +17,8 @@ Aplikacija za upravljanje natjecanjima mažoretkinja.
 ## ✨ Funkcionalnosti
 
 - 👤 Kreiranje korisničkog računa i prijava putem email-a i lozinke  
-- 🚪 Odjava korisnika (povratak na Login stranicu)  
-- 🌐 Navigacija kroz aplikaciju (Početna, Suci, Popis natjecatelja, itd.)  
+- 🚪 Odjava korisnika
+- 🌐 Navigacija kroz aplikaciju 
 - 📝 Prijava mažoretkinja na natjecanje (uz dobna i kategorijska ograničenja – solo/duo)  
 - ❌ Odjava mažoretkinje iz baze prijavljenih  
 - 📋 Pregled svih prijavljenih mažoretkinja  
@@ -26,7 +26,7 @@ Aplikacija za upravljanje natjecanjima mažoretkinja.
 ---
 
 ## 🔗 Link na javni Figma prototip  
-🎨 [TwirlTrack prototip](https://www.figma.com/design/0ExEpyUlnYzHfjImiTCqxe/TwirlTrack---prototip)
+🎨 [twirltrack prototip](https://www.figma.com/design/0ExEpyUlnYzHfjImiTCqxe/TwirlTrack---prototip)
 
 ---
 
@@ -39,7 +39,7 @@ Aplikacija za upravljanje natjecanjima mažoretkinja.
 ---
 
 ## 🎥 Video prezentacija  
-📺 [YouTube – TwirlTrack](https://youtu.be/FXybIxt0gk4)
+📺 [YouTube – twirltrack](https://youtu.be/FXybIxt0gk4)
 
 ---
 
