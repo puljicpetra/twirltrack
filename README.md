@@ -1,39 +1,57 @@
-# twirltrack
+# 💃 TwirlTrack
 
-- **Tim:** 224/23 - Petra Puljić  
-- **Fakultet informatike u Puli** (https://fipu.unipu.hr/)
-- **Kolegij:** Programsko inženjerstvo (ntankovic.unipu.hr/pi)
-- **Mentor:** doc. dr. sc. Nikola Tanković (ntankovic.unipu.hr)
+Aplikacija za upravljanje natjecanjima mažoretkinja.
 
+---
 
-## Funkcionalnosti:
-- korisnik kreira račun i prijavljuje se putem email-a i lozinke
-- korisnik se odjavljuje iz aplikacije (vraća se na Login page)
-- navigacijske funkcionalnosti (prijelaz sa početne stranice na ostale - Suci, Popis natjecatelja, ...)
-- prijava mažoretkinje na natjecanje (ograničenja dobnog razreda te kategorija solo/duo)
-- odjava mažoretkinje iz baze prijavljenih
-- pregled prijavljenih mažoretkinja
+## 👥 Tim: 224/23 - Petra Puljić  
+📍 Fakultet informatike u Puli  
+🌐 [https://fipu.unipu.hr](https://fipu.unipu.hr)
 
+## 📚 Kolegij: Programsko inženjerstvo  
+👨‍🏫 Mentor: doc. dr. sc. Nikola Tanković  
+🔗 [ntankovic.unipu.hr/pi](http://ntankovic.unipu.hr/pi)
 
-## Link na javni prototip:
-https://www.figma.com/design/0ExEpyUlnYzHfjImiTCqxe/TwirlTrack---prototip
+---
 
+## ✨ Funkcionalnosti
 
-## Zaduženja po članu tima:
-- 1 član: Petra Puljić
-- izrada i implementacija aplikacije
+- 👤 Kreiranje korisničkog računa i prijava putem email-a i lozinke  
+- 🚪 Odjava korisnika (povratak na Login stranicu)  
+- 🌐 Navigacija kroz aplikaciju (Početna, Suci, Popis natjecatelja, itd.)  
+- 📝 Prijava mažoretkinja na natjecanje (uz dobna i kategorijska ograničenja – solo/duo)  
+- ❌ Odjava mažoretkinje iz baze prijavljenih  
+- 📋 Pregled svih prijavljenih mažoretkinja  
 
+---
 
-## Video prezentacija:
-https://youtu.be/FXybIxt0gk4
+## 🔗 Link na javni Figma prototip  
+🎨 [TwirlTrack prototip](https://www.figma.com/design/0ExEpyUlnYzHfjImiTCqxe/TwirlTrack---prototip)
 
+---
 
-## Aplikacija:
-https://twirltrack-a628e.firebaseapp.com/
+## 👩‍💻 Zaduženja
 
+| Član tima     | Zaduženje                             |
+|---------------|----------------------------------------|
+| Petra Puljić  | Izrada i implementacija aplikacije     |
 
-## Upute za instalaciju:
-```
+---
+
+## 🎥 Video prezentacija  
+📺 [YouTube – TwirlTrack](https://youtu.be/FXybIxt0gk4)
+
+---
+
+## 🌍 Aplikacija (Firebase host)  
+🔗 [https://twirltrack-a628e.firebaseapp.com/](https://twirltrack-a628e.firebaseapp.com/)
+
+---
+
+## ⚙️ Upute za instalaciju
+
+```bash
 git clone https://github.com/PetraPuljic5/twirltrack.git
+cd twirltrack
+npm install
 npm run serve
-```
