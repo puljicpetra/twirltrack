@@ -1,3 +1,10 @@
+[Hrvatski](#hrvatski) | [English](#english)
+
+---
+
+## Hrvatski
+<a name="hrvatski"></a>
+
 # 💃 twirltrack
 
 Aplikacija za upravljanje natjecanjima mažoretkinja.
@@ -51,7 +58,72 @@ Aplikacija za upravljanje natjecanjima mažoretkinja.
 ## ⚙️ Upute za instalaciju
 
 ```bash
-git clone https://github.com/PetraPuljic5/twirltrack.git
-cd twirltrack
+git clone https://github.com/puljicpetra/twirltrack-vue-project.git
+cd twirltrack-vue-project
 npm install
 npm run serve
+```
+
+---
+
+## English
+<a name="english"></a>
+
+# 💃 twirltrack
+
+An application for managing majorette competitions.
+
+---
+
+## 👥 Team: 224/23 - Petra Puljić  
+📍 Faculty of Informatics in Pula
+🌐 [https://fipu.unipu.hr](https://fipu.unipu.hr)
+
+## 📚 Course: Software Engineering  
+👨‍🏫 Mentor: Asst. Prof. Nikola Tanković, PhD 
+🔗 [ntankovic.unipu.hr/pi](http://ntankovic.unipu.hr/pi)
+
+---
+
+## ✨ Features
+
+- 👤 User account creation and login via email and password 
+- 🚪 User logout
+- 🌐 Application navigation 
+- 📝 Majorette registration for competitions (with age and category restrictions – solo/duo)  
+- ❌ Withdrawal of a majorette from the registered list  
+- 📋 View all registered majorettes  
+
+---
+
+## 🔗 Public Figma Prototype Link  
+🎨 [twirltrack prototype](https://www.figma.com/design/0ExEpyUlnYzHfjImiTCqxe/TwirlTrack---prototip)
+
+---
+
+## 👩‍💻 Responsibilities
+
+| Team Member     | Responsibility                             |
+|---------------|----------------------------------------|
+| Petra Puljić  | Application development and implementation     |
+
+---
+
+## 🎥 Video Presentation  
+📺 [YouTube – twirltrack](https://youtu.be/FXybIxt0gk4)
+
+---
+
+## 🌍 Live Application (Firebase host)  
+🔗 [https://twirltrack-a628e.firebaseapp.com/](https://twirltrack-a628e.firebaseapp.com/)
+
+---
+
+## ⚙️ Installation Instructions
+
+```bash
+git clone https://github.com/puljicpetra/twirltrack-vue-project.git
+cd twirltrack-vue-project
+npm install
+npm run serve
+```
